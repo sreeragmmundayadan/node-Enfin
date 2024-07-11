@@ -63,7 +63,7 @@ export class BookController {
 
   @Delete()
   async deleteBook(
-    @Body() deleteBookRequest: DeleteBookRequestDto,
+    @Query() deleteBookRequest: DeleteBookRequestDto,
   ): Promise<{ message: string }> {
     try {
       const book = await this.bookService.findBookById(deleteBookRequest.id)
